@@ -1,0 +1,8 @@
+version: "3"
+
+services: 
+  portfolio_2024:
+    image: portfolio_2024
+    build: .
+    ports:
+      - 5173:5173
