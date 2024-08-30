@@ -1,11 +1,11 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import { AppBar, Avatar, Button, BottomNavigation, Grid, Toolbar, Typography, IconButton, Chip } from '@mui/material'
-import { Box, Tabs, Tab, BottomNavigationAction } from '@mui/material'
+import { Tabs, Tab, BottomNavigationAction } from '@mui/material'
 import { 
   LinkedIn as LinkedInIcon,
   GitHub as GitHubIcon,
-  Email as EmailIcon,
-  Home as HomeIcon,
+  // Email as EmailIcon,
+  // Home as HomeIcon,
   Instagram as InstagramIcon,
   Twitter as TwitterIcon
 } from '@mui/icons-material'
@@ -29,23 +29,23 @@ export function Scene({ isHovered }: { isHovered: boolean }) {
   )
 }
 
-const handleType = (type: string) => ({  
-  heading_1: "h1",
-  heading_2: "h2",
-  heading_3: "h3",
-  heading_4: "h4",
-  heading_5: "h5",
-  heading_6: "h6",
-  paragraph: "p",
-  divider: "divider"
-}[type]);
+// const handleType = (type: string) => ({  
+//   heading_1: "h1",
+//   heading_2: "h2",
+//   heading_3: "h3",
+//   heading_4: "h4",
+//   heading_5: "h5",
+//   heading_6: "h6",
+//   paragraph: "p",
+//   divider: "divider"
+// }[type]);
 
-const excludeList = [
-  "column_list",
-  "divider",
-  "quote",
-  "link_preview"
-];
+// const excludeList = [
+//   "column_list",
+//   "divider",
+//   "quote",
+//   "link_preview"
+// ];
 
 const navItems = ["Work", "Experience", "Resume", "About"];
 
@@ -64,7 +64,8 @@ function App() {
 export default App;
 
 const AppContent = ({ data }: { data: any }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  // const [isHovered, setIsHovered] = useState(false);
+  console.log("AppContent.data: ", data)
   return (
     <>
     <Grid container sx={{ maxWidth: "100vw", my: 8, p: 2 }}>
