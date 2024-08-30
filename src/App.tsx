@@ -53,7 +53,7 @@ function App() {
   const contentQuery = useQuery(queries.query("/notion/portfolio"));
   console.log("contentQuery: ", contentQuery)
 
-  return ({
+  return <AppContent /> || ({
     pending: <>Starting up...</>,
     loading: <>Loading...</>,
     success: <AppContent data={contentQuery.data} />,
@@ -63,7 +63,7 @@ function App() {
 
 export default App;
 
-const AppContent = ({ data }: { data: any }) => {
+const AppContent = ({ data }: { data?: any }) => {
   // const [isHovered, setIsHovered] = useState(false);
   console.log("AppContent.data: ", data)
   return (
