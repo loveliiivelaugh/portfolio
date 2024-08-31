@@ -47,7 +47,7 @@ export function Scene({ isHovered }: { isHovered: boolean }) {
 //   "link_preview"
 // ];
 
-const navItems = ["Work", "Experience", "Resume", "About"];
+const navItems = ["Work", "Experience", "About", "Resume"];
 
 function App() {
   const contentQuery = useQuery(queries.query("/notion/portfolio"));
@@ -108,11 +108,11 @@ const AppContent = ({ data }: { data?: any }) => {
         <Chip label="React" color="primary" />
         <Chip label="Node" color="primary" />
       </Grid>
-      <Grid item sm={12}>
+      <Grid id='experience' item sm={12}>
         <MuiTimeline />
       </Grid>
       <Grid item sm={12}>
-        <Grid container>
+        <Grid container id="work">
           {projectsContent.map((item: any, index: number) => (
             <Grid
               item
@@ -134,7 +134,7 @@ const AppContent = ({ data }: { data?: any }) => {
         </Grid>
       </Grid>
 
-      <Grid item sm={12}>
+      <Grid item sm={12} id='about'>
         <Typography variant="h4" component="h4">
           About Me
         </Typography>
@@ -190,7 +190,9 @@ const AppContent = ({ data }: { data?: any }) => {
               label={item}
               icon={(navItems as any)[item as keyof typeof navItems]}
               value={index}
-              onClick={() => {}}
+              component="a"
+              href={`#${item.toLowerCase()}`}
+              // onClick={() => {}}
             />
           ))}
         </BottomNavigation>
